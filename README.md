@@ -24,6 +24,7 @@ It features both a **Command Line Interface (CLI)** and a modern **Streamlit Web
 
 ```mermaid
 graph LR
+    User --> User Query
     User(User Query) --> Planner
     Planner -->|Plan| Executor
     Executor -->|Tool Outputs| Verifier
