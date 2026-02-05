@@ -24,16 +24,18 @@ It features both a **Command Line Interface (CLI)** and a modern **Streamlit Web
 
 ```mermaid
 graph LR
-    User --> User Query
-    User(User Query) --> Planner
-    Planner -->|Plan| Executor
-    Executor -->|Tool Outputs| Verifier
-    Verifier -->|Final Answer| User
-    
-    subgraph Tools
-        Executor -.-> Weather[Weather Tool]
-        Executor -.-> Air[Air Quality Tool]
+    U[User] --> Q[User Query]
+
+    Q --> P[Planner Agent]
+    P -->|Structured Plan| E[Executor Agent]
+    E -->|Tool Outputs| V[Verifier Agent]
+    V -->|Final Answer| U
+
+    subgraph External Tools
+        E -.-> W[Weather API]
+        E -.-> A[Air Quality API]
     end
+
 ```
 
 ---
